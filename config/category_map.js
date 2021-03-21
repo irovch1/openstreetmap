@@ -43,10 +43,11 @@ var mapping = {
     'library':                  ['education','entertainment'],
     'planetarium':              ['education','entertainment'],
     'theatre':                  ['education','entertainment'],
-    'college':                  ['education'],
-    'kindergarten':             ['education'],
-    'school':                   ['education'],
-    'university':               ['education'],
+    'college':                  ['education', 'airintel', 'airintel:schools'],
+    'kindergarten':             ['education', 'airintel', 'airintel:kindergartens'],
+    'school':                   ['education', 'airintel', 'airintel:schools'],
+    'university':               ['education', 'airintel', 'airintel:schools'],
+    'childcare':                ['airintel', 'airintel:kindergartens'],
 
     'bar':                      ['nightlife'],
     'biergarten':               ['nightlife','food'],
@@ -74,8 +75,8 @@ var mapping = {
     'clinic':                   ['health'],
     'dentist':                  ['health'],
     'doctors':                  ['health'],
-    'hospital':                 ['health'],
-    'nursing_home':             ['health'],
+    'hospital':                 ['health', 'airintel', 'airintel:medical_facilities'],
+    'nursing_home':             ['health', 'airintel', 'airintel:medical_facilities'],
     'pharmacy':                 ['health'],
     'social_facility':          ['health'],
     'veterinary':               ['professional'],
@@ -93,9 +94,16 @@ var mapping = {
     'car_rental':               ['transport','professional'],
     'car_wash':                 ['professional'],
     'charging_station':         ['transport','professional'],
-    'fuel':                     ['transport','professional'],
+    'fuel':                     ['transport','professional', 'airintel', 'airintel:fuel'],
 
-    'ferry_terminal':           ['transport','transport:sea']
+    'ferry_terminal':           ['transport','transport:sea'],
+    'parking':                  ['airintel', 'airintel:parking'],
+    'recycling':                ['airintel', 'airintel:waste_recycling'],
+    'sanitary_dump_station':    ['airintel', 'airintel:waste_recycling'],
+    'waste_transfer_station':   ['airintel', 'airintel:waste_recycling'],
+    'crematorium':              ['airintel', 'airintel:crematoriums'],
+    'harbour':                  ['airintel', 'airintel:harbours'],
+
   },
 
   'building': {
@@ -251,9 +259,9 @@ var mapping = {
     'ice_rink':                 ['entertainment'],
     'miniature_golf':           ['entertainment'],
     'nature_reserve':           ['recreation'],
-    'park':                     ['recreation'],
+    'park':                     ['recreation', 'airintel', 'airintel:parks'],
     'pitch':                    ['recreation','entertainment'],
-    'playground':               ['recreation'],
+    'playground':               ['recreation', 'airintel', 'airintel:playgrounds'],
     'sports_centre':            ['recreation','education','entertainment'],
     'stadium':                  ['entertainment'],
     'summer_camp':              ['recreation','education'],
@@ -352,9 +360,21 @@ var mapping = {
     'viewpoint':                ['recreation'],
     'museum':                   ['education','entertainment'],
     'gallery':                  ['education','entertainment'],
-    'zoo':                      ['education','entertainment']
-  }
+    'zoo':                      ['education','entertainment', 'airintel', 'airintel:playgrounds']
+  },
 
+  'landuse': {
+    'landfill':                 ['airintel', 'airintel:landfills'],
+    'industrial':               ['airintel', 'airintel:industrial'],
+    'construction':             ['airintel', 'airintel:construction'],
+    'railway':                  ['airintel', 'airintel:railways'],
+    'residential':              ['airintel', 'airintel:residential_areas'],
+  },
+
+  'power': {
+    'plant':                    ['airintel', 'airintel:power_plants'],
+
+  }
 };
 
 module.exports = mapping;
