@@ -43,11 +43,11 @@ var mapping = {
     'library':                  ['education','entertainment'],
     'planetarium':              ['education','entertainment'],
     'theatre':                  ['education','entertainment'],
-    'college':                  ['education', 'airintel', 'airintel:schools'],
-    'kindergarten':             ['education', 'airintel', 'airintel:kindergartens'],
-    'school':                   ['education', 'airintel', 'airintel:schools'],
-    'university':               ['education', 'airintel', 'airintel:schools'],
-    'childcare':                ['airintel', 'airintel:kindergartens'],
+    'college':                  ['education','ai', 'ai:areas', 'ai:areas:schools'],
+    'kindergarten':             ['education','ai', 'ai:areas', 'ai:areas:kindergartens'],
+    'school':                   ['education','ai', 'ai:areas', 'ai:areas:schools'],
+    'university':               ['education','ai', 'ai:areas', 'ai:areas:schools'],
+    'childcare':                ['ai', 'ai:areas', 'ai:areas:kindergartens'],
 
     'bar':                      ['nightlife'],
     'biergarten':               ['nightlife','food'],
@@ -75,8 +75,8 @@ var mapping = {
     'clinic':                   ['health'],
     'dentist':                  ['health'],
     'doctors':                  ['health'],
-    'hospital':                 ['health', 'airintel', 'airintel:medical_facilities'],
-    'nursing_home':             ['health', 'airintel', 'airintel:medical_facilities'],
+    'hospital':                 ['health', 'ai', 'ai:areas', 'ai:areas:medical_facilities'],
+    'nursing_home':             ['health', 'ai', 'ai:areas', 'ai:areas:medical_facilities'],
     'pharmacy':                 ['health'],
     'social_facility':          ['health'],
     'veterinary':               ['professional'],
@@ -94,15 +94,15 @@ var mapping = {
     'car_rental':               ['transport','professional'],
     'car_wash':                 ['professional'],
     'charging_station':         ['transport','professional'],
-    'fuel':                     ['transport','professional', 'airintel', 'airintel:fuel'],
+    'fuel':                     ['transport','professional', 'ai', 'ai:sources', 'ai:sources:fuel'],
 
     'ferry_terminal':           ['transport','transport:sea'],
-    'parking':                  ['airintel', 'airintel:parking'],
-    'recycling':                ['airintel', 'airintel:waste_recycling'],
-    'sanitary_dump_station':    ['airintel', 'airintel:waste_recycling'],
-    'waste_transfer_station':   ['airintel', 'airintel:waste_recycling'],
-    'crematorium':              ['airintel', 'airintel:crematoriums'],
-    'harbour':                  ['airintel', 'airintel:harbours'],
+    'parking':                  ['ai', 'ai:sources', 'ai:sources:parking'],
+    'recycling':                ['ai', 'ai:sources', 'ai:sources:waste_recycling'],
+    'sanitary_dump_station':    ['ai', 'ai:sources', 'ai:sources:waste_recycling'],
+    'waste_transfer_station':   ['ai', 'ai:sources', 'ai:sources:waste_recycling'],
+    'crematorium':              ['ai', 'ai:sources', 'ai:sources:crematoriums'],
+    'harbour':                  ['ai', 'ai:sources', 'ai:sources:harbours'],
 
   },
 
@@ -252,16 +252,16 @@ var mapping = {
     'bandstand':                ['entertainment'],
     'dance':                    ['nightlife'],
 
-    'dog_park':                 ['recreation'],
+    'dog_park':                 ['recreation', 'ai', 'ai:areas', 'ai:areas:parks'],
     'fishing':                  ['recreation'],
     'garden':                   ['recreation'],
     'golf_course':              ['recreation','entertainment'],
     'ice_rink':                 ['entertainment'],
     'miniature_golf':           ['entertainment'],
     'nature_reserve':           ['recreation'],
-    'park':                     ['recreation', 'airintel', 'airintel:parks'],
-    'pitch':                    ['recreation','entertainment'],
-    'playground':               ['recreation', 'airintel', 'airintel:playgrounds'],
+    'park':                     ['recreation', 'ai', 'ai:areas', 'ai:areas:parks'],
+    'pitch':                    ['recreation','entertainment','ai','ai:areas','ai:areas:sports_fields'],
+    'playground':               ['recreation', 'ai', 'ai:areas', 'ai:areas:playgrounds'],
     'sports_centre':            ['recreation','education','entertainment'],
     'stadium':                  ['entertainment'],
     'summer_camp':              ['recreation','education'],
@@ -360,19 +360,18 @@ var mapping = {
     'viewpoint':                ['recreation'],
     'museum':                   ['education','entertainment'],
     'gallery':                  ['education','entertainment'],
-    'zoo':                      ['education','entertainment', 'airintel', 'airintel:playgrounds']
+    'zoo':                      ['education','entertainment', 'ai', 'ai:areas', 'ai:areas:playgrounds']
   },
 
   'landuse': {
-    'landfill':                 ['airintel', 'airintel:landfills'],
-    'industrial':               ['airintel', 'airintel:industrial'],
-    'construction':             ['airintel', 'airintel:construction'],
-    'railway':                  ['airintel', 'airintel:railways'],
-    'residential':              ['airintel', 'airintel:residential_areas'],
+    'landfill':                 ['ai', 'ai:sources', 'ai:sources:landfills'],
+    'industrial':               ['ai', 'ai:sources', 'ai:sources:industrial'],
+    'construction':             ['ai', 'ai:sources', 'ai:sources:construction'],
+    'railway':                  ['ai', 'ai:sources', 'ai:sources:railways'],
   },
 
   'power': {
-    'plant':                    ['airintel', 'airintel:power_plants'],
+    'plant':                    ['ai', 'ai:sources', 'ai:sources:power_plants'],
 
   }
 };
