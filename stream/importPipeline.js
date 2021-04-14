@@ -18,6 +18,19 @@ streams.popularityMapper = require('./popularity_mapper');
 streams.dbMapper = require('pelias-model').createDocumentMapperStream;
 streams.elasticsearch = require('pelias-dbclient');
 
+const through = require('through2');
+const DUMP_TO = process.env.DUMP_TO;
+
+function createDocumentMapperStream() {
+  if(DUMP_TO) {
+    return through.obj( function( model, enc, next ){
+      next(null, model.callPostProcessingScripts());
+    });
+  }
+
+  return streams.dbMapper();
+}
+
 // default import pipeline
 streams.import = function(){
   streams.pbfParser()
@@ -29,7 +42,7 @@ streams.import = function(){
     .pipe( streams.addendumMapper() )
     .pipe( streams.popularityMapper() )
     .pipe( streams.adminLookup() )
-    .pipe( streams.dbMapper() )
+    .pipe( createDocumentMapperStream() )
     .pipe( streams.elasticsearch({name: 'openstreetmap'}) );
 };
 
